@@ -2,15 +2,11 @@
 
 namespace Ferdous\K8s\Controller;
 
-use CubeSystems\HealthCheck\Model\Heartbeat;
 use Ferdous\K8s\Probes\LivenessProbe;
 use Ferdous\K8s\Probes\ReadinessProbe;
 use Ferdous\K8s\Probes\StartupProbe;
-use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Facades\DB;
 
 class HealthCheckController extends BaseController
 {
