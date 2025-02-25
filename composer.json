@@ -1,0 +1,60 @@
+{
+    "name": "ferdous/k8s-probe-laravel",
+    "description": "This package is built for Laravel to expose the K8S Probes e.g. Liveness, Readiness and Startup Probes",
+    "type": "library",
+    "homepage": "https://github.com/ferdousulhaque/k8s-probe-laravel",
+    "keywords": [
+        "php",
+        "laravel",
+        "kubernetes",
+        "k8s",
+        "liveness",
+        "readiness",
+        "startup",
+        "probes"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "A S Md Ferdousul Haque",
+            "email": "ferdousul.haque@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Ferdous\\K8s\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ferdous\\K8s\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "orchestra/testbench": "^8.0|^9.0",
+        "phpunit/phpunit": "^10.0|^11.0",
+        "larastan/larastan": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.3"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ferdous\\K8s\\Providers\\HealthCheckProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
