@@ -23,6 +23,11 @@ class HealthCheckProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+        // Config Copy
+        $source = realpath(__DIR__ . '/../config/k8s-health.php');
+        $this->mergeConfigFrom($source, 'k8s-health');
+
+        // Route Copy
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
     }
 }

@@ -23,8 +23,8 @@ class Response
         $this->status = $status;
     }
 
-    function set_checkpoints(array $checkpoints): void{
-        $this->checkpoints = array_merge_recursive($this->checkpoints,$checkpoints);
+    function set_checkpoints(string $checkpoint): void{
+        $this->checkpoints = array_merge_recursive($this->checkpoints,$checkpoint);
     }
 
     function set_exception(array $message): void{

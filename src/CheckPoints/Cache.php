@@ -1,5 +1,5 @@
 <?php
-
+namespace Ferdous\K8s\Checkpoint;
 class Cache implements CheckPointInterface
 {
 
