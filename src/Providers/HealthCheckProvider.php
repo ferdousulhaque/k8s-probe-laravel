@@ -25,9 +25,17 @@ class HealthCheckProvider extends ServiceProvider
     {
         // Config Copy
         $source = realpath(__DIR__ . '/../../config/k8s-health.php');
-        $this->mergeConfigFrom($source, 'k8s-health');
+        // $this->mergeConfigFrom($source, 'k8s-health');
 
         // Route Copy
-        $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../../routes/api.php');
+
+        // Check if the application is a Laravel OR Lumen instance to properly merge the configuration file.
+        // Publish the files
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                $source => config_path('k8s-health.php'),
+            ]);
+        }
     }
 }
