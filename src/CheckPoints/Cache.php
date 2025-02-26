@@ -1,5 +1,5 @@
 <?php
-namespace Ferdous\K8s\Checkpoint;
+namespace Ferdous\K8s\CheckPoint;
 class Cache implements CheckPointInterface
 {
     private string $exception;

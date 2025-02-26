@@ -1,5 +1,5 @@
 <?php
-namespace Ferdous\K8s\Provider;
+namespace Ferdous\K8s\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

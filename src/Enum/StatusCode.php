@@ -1,5 +1,5 @@
 <?php
-namespace Ferdous\K8s\Probes\Enum;
+namespace Ferdous\K8s\Enum;
 
 enum StatusCode : int
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ferdous\K8s\Probes\DTO;
+namespace Ferdous\K8s\DTO;
 
 class Response
 {

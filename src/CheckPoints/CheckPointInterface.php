@@ -1,5 +1,5 @@
 <?php
-namespace Ferdous\K8s\Checkpoint;
+namespace Ferdous\K8s\CheckPoint;
 interface CheckPointInterface
 {
     function status(): bool;
