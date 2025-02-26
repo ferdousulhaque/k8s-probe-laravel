@@ -10,7 +10,12 @@ You need to run the following command to install
 composer require ferdous\k8s-probe-laravel
 ```
 
-It will ask for publishing once installed. Please press `Y`
+Publish the config and api files
+
+```bash
+php artisan vendor:publish
+```
+Select the package and press enter key.
 
 ## Adding new Checkpoints
 The package is dynamically built-in support for custom checkpoints. You can see the config `k8s-health.php` file.
