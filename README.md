@@ -42,6 +42,7 @@ Now your Custom checkpoint is added for kubernetes health check automatically.
 
 ## Contributors:
 - A S Md Ferdousul Haque
+- Mohammad Moniruzzaman Shovon
 
 ## License
 MIT
