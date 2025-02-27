@@ -23,7 +23,7 @@ class DatabaseCheck implements CheckPointInterface
             $this->set_exception("Database Query Failed");
             return false;
         } catch (\Exception $e) {
-            $this->set_exception("Database Connection Failed");
+            $this->set_exception($e->getMessage());
             return false;
         }
     }

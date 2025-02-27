@@ -22,7 +22,7 @@ class CacheCheck implements CheckPointInterface
             $this->set_exception("Cache Connection Failed");
             return false;
         }catch(\Exception $e){
-            $this->set_exception("Cache Write Failed");
+            $this->set_exception($e->getMessage());
             return false;
         }
     }
