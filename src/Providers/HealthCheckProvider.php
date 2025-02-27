@@ -18,7 +18,7 @@ class HealthCheckProvider extends ServiceProvider
             return new HealthCheckController();
         });
         // Route Copy
-        $this->loadRoutesFrom(__DIR__ . '/../../routes/api.php');
+        // $this->loadRoutesFrom(__DIR__ . '/../../routes/api.php');
     }
 
     /**

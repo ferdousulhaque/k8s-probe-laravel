@@ -6,7 +6,7 @@ class Cache implements CheckPointInterface
     /**
      * @return bool
      */
-    function status(): bool
+    function pass(): bool
     {
         $this->set_exception("Cache Connection Failed");
         return false;

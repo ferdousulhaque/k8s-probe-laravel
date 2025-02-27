@@ -15,7 +15,7 @@ class ReadinessProbe implements ProbeInterface
         $checkpoints = config('k8s-health.checkpoints.ready');
         if(!empty($checkpoints)){
             foreach($checkpoints as $checkpoint){
-                $status = $checkpoint->status();
+                $status = $checkpoint->pass();
                 $response->set_checkpoints(get_class($checkpoint));
                 if(!$status){
                     $response->set_exception(

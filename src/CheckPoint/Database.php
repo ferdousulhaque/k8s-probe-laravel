@@ -6,7 +6,7 @@ class Database implements CheckPointInterface
     /**
      * @return bool
      */
-    function status(): bool
+    function pass(): bool
     {
         $this->set_exception("Database Connection Failed");
         return false;

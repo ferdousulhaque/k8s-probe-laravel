@@ -24,12 +24,10 @@ class Response
     }
 
     function set_checkpoints(string $checkpoint): void{
-        $this->checkpoints = array_merge_recursive($this->checkpoints,$checkpoint);
+        $this->checkpoints = array_merge_recursive($this->checkpoints,[$checkpoint]);
     }
 
-    function set_exception(array $message): void{
+    function set_exception(string $message): void{
         $this->exception = $message;
     }
-
-
 }
