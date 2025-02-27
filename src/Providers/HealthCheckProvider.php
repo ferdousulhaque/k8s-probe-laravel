@@ -1,6 +1,7 @@
 <?php
 namespace Ferdous\K8s\Providers;
 
+use Ferdous\K8s\Controller\HealthCheckController;
 use Illuminate\Support\ServiceProvider;
 
 class HealthCheckProvider extends ServiceProvider
@@ -13,7 +14,11 @@ class HealthCheckProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('Ferdous\K8s\Controller\HealthCheckController');
+        $this->app->singleton(HealthCheckController::class, function () {
+            return new HealthCheckController();
+        });
+        // Route Copy
+        $this->loadRoutesFrom(__DIR__ . '/../../routes/api.php');
     }
 
     /**
