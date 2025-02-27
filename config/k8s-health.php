@@ -4,8 +4,8 @@ return [
     'checkpoints' => [
         'live' => [],
         'ready' => [
-                new Ferdous\K8s\CheckPoint\Cache(),
-                new Ferdous\K8s\CheckPoint\Database()
+                new Ferdous\K8s\CheckPoint\CacheCheck(),
+                new Ferdous\K8s\CheckPoint\DatabaseCheck()
         ],
         'startup' => [],
     ]

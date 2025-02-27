@@ -27,8 +27,8 @@ return [
             new Custom\Checkpoint2()
         ],
         'ready' => [
-                new Ferdous\K8s\Checkpoint\Cache(),
-                new Ferdous\K8s\Checkpoint\Database()
+                new Ferdous\K8s\Checkpoint\CacheCheck(),
+                new Ferdous\K8s\Checkpoint\DatabaseCheck()
         ],
         'startup' => [],
     ]
