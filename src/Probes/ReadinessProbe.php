@@ -7,6 +7,7 @@ use Ferdous\K8s\DTO\Response;
 use Ferdous\K8s\Enum\StatusCode;
 use Illuminate\Http\JsonResponse;
 use \Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Request;
 
 class ReadinessProbe implements ProbeInterface
 {
@@ -41,5 +42,10 @@ class ReadinessProbe implements ProbeInterface
         return response()
             ->json($response->data())
             ->setStatusCode(StatusCode::HTTP_OK->value);
+    }
+
+    public static function healthyByType(Request $request): JsonResponse
+    {
+        //TODO:
     }
 }

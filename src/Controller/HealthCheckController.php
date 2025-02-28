@@ -7,6 +7,7 @@ use Ferdous\K8s\Probes\ReadinessProbe;
 use Ferdous\K8s\Probes\StartupProbe;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Request;
 
 class HealthCheckController extends BaseController
 {
@@ -18,6 +19,16 @@ class HealthCheckController extends BaseController
     public function readiness(): JsonResponse
     {
         return ReadinessProbe::healthy();
+    }
+
+    /**
+     * Check if the server is ready to receive traffic
+     *
+     * @return JsonResponse
+     */
+    public function readinessByType(Request $request): JsonResponse
+    {
+        return ReadinessProbe::healthyByType($request);
     }
 
     /**
