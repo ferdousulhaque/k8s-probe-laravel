@@ -2,6 +2,7 @@
 
 namespace Ferdous\K8s\Probes;
 
+use Ferdous\K8s\CheckPoint\CheckPointInterface;
 use Ferdous\K8s\DTO\Response;
 use Ferdous\K8s\Enum\StatusCode;
 use Illuminate\Http\JsonResponse;
@@ -15,13 +16,21 @@ class ReadinessProbe implements ProbeInterface
         $checkpoints = config('k8s-health.checkpoints.ready');
         if(!empty($checkpoints)){
             foreach($checkpoints as $checkpoint){
-                $status = $checkpoint->pass();
-                $response->set_checkpoints(get_class($checkpoint));
-                if(!$status){
-                    $response->set_exception(
-                        $checkpoint->get_exception()
-                    );
-                    $response->set_status($status);
+                if($checkpoint instanceof CheckPointInterface){
+                    $status = $checkpoint->pass();
+                    $response->set_checkpoints(get_class($checkpoint));
+                    if(!$status){
+                        $response->set_exception(
+                            $checkpoint->get_exception()
+                        );
+                        $response->set_status($status);
+                        return response()
+                            ->json($response->data())
+                            ->setStatusCode(StatusCode::HTTP_READY_ERROR->value);
+                    }
+                }else{
+                    $response->set_exception("Not an instance of CheckPointInterface.");
+                    $response->set_status(false);
                     return response()
                         ->json($response->data())
                         ->setStatusCode(StatusCode::HTTP_READY_ERROR->value);
