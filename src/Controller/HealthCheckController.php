@@ -26,9 +26,9 @@ class HealthCheckController extends BaseController
      *
      * @return JsonResponse
      */
-    public function readinessByType(Request $request): JsonResponse
+    public function readinessByType(Request $request, string $type): JsonResponse
     {
-        return ReadinessProbe::healthyByType($request);
+        return ReadinessProbe::healthyByType($request, $type);
     }
 
     /**
