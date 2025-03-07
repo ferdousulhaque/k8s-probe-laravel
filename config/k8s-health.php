@@ -1,16 +1,16 @@
 <?php
-
+// Any class here must implement CheckPointInterface
 return [
     'checkpoints' => [
         'live' => [],
         'ready' => [
-                new Ferdous\K8s\CheckPoint\CacheCheck(),
-                new Ferdous\K8s\CheckPoint\DatabaseCheck()
+            Ferdous\K8s\CheckPoint\CacheCheck::class,
+            Ferdous\K8s\CheckPoint\DatabaseCheck::class
         ],
         'startup' => [],
     ],
     'route-for-types' => [
-        'cache' => new Ferdous\K8s\CheckPoint\CacheCheck(),
-        'database' => new Ferdous\K8s\CheckPoint\DatabaseCheck()
+        'cache' => Ferdous\K8s\CheckPoint\CacheCheck::class,
+        'database' => Ferdous\K8s\CheckPoint\DatabaseCheck::class
     ],
 ];
