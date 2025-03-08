@@ -1,4 +1,13 @@
 # Lavavel Health Check Probes For Kubernetes
+
+[//]: # (![Packagist Downloads]&#40;https://img.shields.io/packagist/dt/ferdous/laravel-otp-validate&#41;)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+[//]: # (![Packagist Version]&#40;https://img.shields.io/packagist/v/ferdous/laravel-otp-validate&#41;)
+
+[//]: # (![Packagist PHP Version Support]&#40;https://img.shields.io/packagist/php-v/ferdous/k8s-probe-laravel&#41;)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ferdousulhaque/k8s-probe-laravel)
+
 For Kubernetes proper setup, it is recommended to expose the following endpoints.
 
 K8s Reference Doc: [Configure Liveness, Readiness and Startup Probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/)
@@ -91,6 +100,10 @@ return [
     ],
 ];
 ```
+
+It exposes routes like `/k8s-probe/readiness/cache` and `/k8s-probe/readiness/database`.
+
+You can make your own types like `/k8s-probe/readiness/custom-check`, just add a new key `custom-check` in the `route-for-types` array and do `config:clear`. Then new route should automatically work.
 
 ## Contributors:
 - A S Md Ferdousul Haque
