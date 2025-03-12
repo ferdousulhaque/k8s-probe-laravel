@@ -105,6 +105,49 @@ It exposes routes like `/k8s-probe/readiness/cache` and `/k8s-probe/readiness/da
 
 You can make your own types like `/k8s-probe/readiness/custom-check`, just add a new key `custom-check` in the `route-for-types` array and do `config:clear`. Then new route should automatically work.
 
+## Response
+
+### Liveness
+```json
+{
+    "status": true,
+    "checkpoints": [],
+    "exception": ""
+}
+```
+
+### Readiness
+```json
+{
+    "status": true,
+    "checkpoints": [
+        "Ferdous\\K8s\\CheckPoint\\CacheCheck",
+        "Ferdous\\K8s\\CheckPoint\\DatabaseCheck"
+    ],
+    "exception": ""
+}
+```
+
+### Startup
+```json
+{
+    "status": true,
+    "checkpoints": [],
+    "exception": ""
+}
+```
+
+### Readiness Type
+```json
+{
+    "status": true,
+    "checkpoints": [
+      "Ferdous\\K8s\\CheckPoint\\DatabaseCheck"
+    ],
+    "exception": ""
+}
+```
+
 ## Contributors:
 - A S Md Ferdousul Haque
 - Mohammad Moniruzzaman Shovon

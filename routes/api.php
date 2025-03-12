@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'k8s-probe'], function () {
+Route::group(['prefix' => config('k8s-health.route-prefix')], function () {
     Route::get('/liveness', [Ferdous\K8s\Controller\HealthCheckController::class, 'liveness']);
     Route::get('/readiness', [Ferdous\K8s\Controller\HealthCheckController::class, 'readiness']);
     Route::get('/readiness/{type}', [Ferdous\K8s\Controller\HealthCheckController::class, 'readinessByType']);

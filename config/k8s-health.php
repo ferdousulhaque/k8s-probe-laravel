@@ -1,6 +1,7 @@
 <?php
 // Any class here must implement CheckPointInterface
 return [
+    'route-prefix' => env('K8S_HEALTH_CHECK_ROUTE_PREFIX', 'k8s-probe'),
     'checkpoints' => [
         'live' => [],
         'ready' => [
