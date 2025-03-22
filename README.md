@@ -37,10 +37,10 @@ The following routes are exposed for Kubernetes to check the health of the appli
 Once you run the `php artisan route:list`, check if the following routes are found
 
 ```text
-  GET|HEAD   k8s-probe/liveness ............................................................................................................. Ferdous\K8s › HealthCheckController@liveness
-  GET|HEAD   k8s-probe/readiness ........................................................................................................... Ferdous\K8s › HealthCheckController@readiness
-  GET|HEAD   k8s-probe/readiness/{type} .............................................................................................. Ferdous\K8s › HealthCheckController@readinessByType
-  GET|HEAD   k8s-probe/startup ............................................................................................................... Ferdous\K8s › HealthCheckController@startup
+  GET|HEAD   k8s-probe/liveness .................. Ferdous\K8s › HealthCheckController@liveness
+  GET|HEAD   k8s-probe/readiness ................ Ferdous\K8s › HealthCheckController@readiness
+  GET|HEAD   k8s-probe/readiness/{type} ... Ferdous\K8s › HealthCheckController@readinessByType
+  GET|HEAD   k8s-probe/startup .................... Ferdous\K8s › HealthCheckController@startup
 ```
 
 ## Adding Custom Checkpoints
